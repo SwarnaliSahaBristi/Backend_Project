@@ -23,3 +23,35 @@ const bootstrap = async () => {
 //sigterm
 
 
+process.on("unhandledRejection", (err)=>{
+  console.log("Unhandled Rejection Detected")
+  if(server){
+    server.close(()=>{
+      process.exit(1)
+    })
+  }
+  process.exit(1);
+})
+
+process.on("uncaughtException", (err)=>{
+  console.log("Unhandled UncaughtException Detected")
+  if(server){
+    server.close(()=>{
+      process.exit(1);
+    })
+  }
+  process.exit(1);
+})
+
+process.on("SIGTERM", (err)=>{
+  console.log("Sigterm Signal - server shutting down", err)
+  if(server){
+    server.close(()=>{
+      process.exit(0)
+    })
+  }
+  process.exit(1)
+})
+
+//exit(1) = Error
+//exit(0) = success
