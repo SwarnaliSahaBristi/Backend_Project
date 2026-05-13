@@ -16,8 +16,8 @@ const router:Router = Router();
 // })
 
 router.get("/login", validateRequest(EmailSchema), AuthController.login);
-router.get("/register", validateRequest(EmailSchema),AuthController.register);
+router.get("/register",AuthController.register);
 router.get("/change-password", validateRequest(EmailSchema),AuthController.changePassword);
-router.get("/forgot-password", validateRequest(EmailSchema),AuthController.forgotPassword);
+router.get("/forgot-password", AuthController.forgotPassword);
 
 export const AuthRoutes = router;
