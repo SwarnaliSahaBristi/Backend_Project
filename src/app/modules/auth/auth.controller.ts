@@ -4,11 +4,11 @@ import { ApiResponse } from "../../../utils/ApiResponse";
 
 const login = async (req: Request, res: Response) => {
   const result = await AuthService.login("swarnali@gmail.com");
-  ApiResponse.success(res, result, "Successfully Changed Password");
+  ApiResponse.success(res, result, "Successfully Login");
 };
 const register = async (req: Request, res: Response) => {
   const result = await AuthService.register("swarnali@gmail.com");
-  ApiResponse.success(res, result, "Successfully Changed Password");
+  ApiResponse.success(res, result, "Successfully Register");
 };
 const changePassword = async (req: Request, res: Response) => {
   const result = await AuthService.changePassword("swarnali@gmail.com");
@@ -21,7 +21,7 @@ const changePassword = async (req: Request, res: Response) => {
 };
 const forgotPassword = async (req: Request, res: Response) => {
   const result = await AuthService.forgotPassword("swarnali@gmail.com");
-  ApiResponse.success(res, result, "Successfully Changed Password");
+  ApiResponse.success(res, result, "Forgot Password");
 };
 
 export const AuthController = {
