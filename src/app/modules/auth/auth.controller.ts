@@ -4,8 +4,9 @@ import { ApiResponse } from "../../../utils/ApiResponse";
 import catchAsync from "../../../utils/catchAsync";
 
 const login = catchAsync(async (req: Request, res: Response) => {
-  const result = await AuthService.login("swarnali@gmail.com");
-  ApiResponse.success(res, result, "Successfully Login");
+  throw new Error("Error occured!!")
+  // const result = await AuthService.login("swarnali@gmail.com");
+  // ApiResponse.success(res, result, "Successfully Login");
 });
 
 const register = catchAsync(async (req: Request, res: Response) => {

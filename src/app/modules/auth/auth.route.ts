@@ -15,7 +15,7 @@ const router:Router = Router();
 //     })
 // })
 
-router.get("/login", validateRequest(EmailSchema), AuthController.login);
+router.get("/login", AuthController.login);
 router.get("/register",AuthController.register);
 router.get("/change-password", validateRequest(EmailSchema),AuthController.changePassword);
 router.get("/forgot-password", AuthController.forgotPassword);
