@@ -37,3 +37,86 @@ Ans: A Clustered Index dictates the literal, physical sorting order of the actua
 Explain Database Sharding and Partitioning. When would you use each?
 
 ANs: Partitioning is the process of splitting a massive, unmanageable table into smaller, distinct logical subsets within the exact same database instance and server, making large datasets faster to query while keeping administration centralized. Sharding, on the other hand, is a form of horizontal scaling where data is divided and distributed across entirely separate physical database servers or machines, meaning each server only holds a fraction of the global dataset. You would use partitioning when a single table grows too large for fast indexing but your server still has plenty of CPU and RAM capacity; you would scale up to sharding when your data or transaction volume completely exhausts the hardware limits of a single physical machine.
+
+What is the difference between:
+-DELETE
+-TRUNCATE
+-DROP
+
+Ans: These three commands differ primarily in their "destructiveness" and how they interact with the database log.
+
+DELETE: A DML (Data Manipulation Language) command used to remove specific rows using a WHERE clause. It is slower because it logs every row deleted, allowing you to "Undo" (Rollback) the action.
+
+TRUNCATE: A DDL (Data Definition Language) command that removes all rows from a table. It is faster than DELETE because it doesn't log individual row deletions. It resets the table but keeps the structure intact.
+
+DROP: A DDL command that completely removes the entire table structure and all its data from the database. The table ceases to exist.
+
+What is a PRIMARY KEY?
+
+Ans: A PRIMARY KEY is a constraint that uniquely identifies each record in a table. It must contain unique values and cannot contain NULL values. Think of it like a Social Security Number or a Student ID; it ensures no two rows are identical.
+
+What is the difference between:
+-PRIMARY KEY
+-UNIQUE KEY
+
+Ans: A Primary Key is a constraint used to uniquely identify each record in a database table; it must contain unique values and strictly prohibits NULL entries. Each table is limited to exactly one Primary Key, which typically serves as the "anchor" for relationships with other tables. In contrast, a Unique Key also ensures that all values in a column are distinct, but its primary purpose is to prevent duplicate data rather than to identify the row itself. Unlike the Primary Key, you can apply multiple Unique Keys to a single table, and most database systems allow a Unique Key column to store a single NULL value.
+
+What is a FOREIGN KEY?
+
+Ans: A FOREIGN KEY is a column (or group of columns) that provides a link between data in two tables. It refers to the PRIMARY KEY of another table. This creates a "Parent-Child" relationship, ensuring referential integrity (you can't have an order for a customer who doesn't exist).
+
+What is JOIN in SQL?
+Explain:
+-INNER JOIN
+-LEFT JOIN
+
+Ans: JOINs are used to combine rows from two or more tables based on a related column between them.
+
+INNER JOIN: Returns records that have matching values in both tables. If a row in Table A doesn't have a match in Table B, it is excluded.
+
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table. If there is no match, the result is NULL on the right side.
+
+What is normalization?
+Explain:
+-1NF
+-2NF
+-3NF
+
+Ans: Normalization is the process of organizing data to reduce redundancy (repetition) and improve data integrity.
+
+1NF (First Normal Form): Data must be atomic (one value per cell) and each record must be unique.
+
+2NF (Second Normal Form): Must be in 1NF, and all non-key columns must depend on the entire primary key.
+
+3NF (Third Normal Form): Must be in 2NF, and no column should depend on another non-key column (no transitive dependencies).
+
+What is indexing?
+Why do we use index?
+
+Ans:An Index is a data structure (usually a B-Tree) that improves the speed of data retrieval operations.
+Why use it? Without an index, the database must perform a "Full Table Scan" (reading every single row). With an index, the database can jump directly to the data, much like using an Index at the back of a textbook to find a specific page.
+
+What is the difference between:
+WHERE
+HAVING
+
+Ans:WHERE: Used to filter records before any groupings are made. It works on individual rows.
+
+HAVING: Used to filter records after an aggregation (like SUM or COUNT) has been performed. It is almost always used with the GROUP BY clause.
+
+What is a transaction in SQL?
+Explain:
+-COMMIT
+-ROLLBACK
+
+Ans: A Transaction is a single unit of work. It follows the "all or nothing" rule.
+
+COMMIT: Saves all changes made during the transaction permanently to the database.
+
+ROLLBACK: Undoes the changes made during the transaction, returning the database to its previous state (useful if an error occurs).
+
+Write a query to find the second highest salary. 
+
+Ans: SELECT MAX(Salary) 
+FROM Employees 
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);
