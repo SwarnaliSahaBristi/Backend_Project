@@ -3,11 +3,11 @@
 ### Register
 ![Register](./assets/register.png)
 
-### Login
-![Login](./assets/login.png)
-
 ### Email Verify
 ![Verify](./assets/verify-email.png)
+
+### Login
+![Login](./assets/login.png)
 
 
 What is the difference between Primary Key and Foreign Key?
