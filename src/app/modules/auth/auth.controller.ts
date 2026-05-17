@@ -4,14 +4,26 @@ import { ApiResponse } from "../../../utils/ApiResponse";
 import catchAsync from "../../../utils/catchAsync";
 
 const login = catchAsync(async (req: Request, res: Response) => {
-  throw new Error("Error occured!!")
-  // const result = await AuthService.login("swarnali@gmail.com");
-  // ApiResponse.success(res, result, "Successfully Login");
+  // throw new Error("Error occured!!")
+  const result = await AuthService.login(req.body);
+  ApiResponse.success(res, result, "Successfully Login");
 });
 
 const register = catchAsync(async (req: Request, res: Response) => {
-  const result = await AuthService.register("swarnali@gmail.com");
+  const result = await AuthService.register(req.body);
   ApiResponse.success(res, result, "Successfully Register");
+});
+
+const verifyEmail = catchAsync(async (req, res) => {
+  const token = req.params.token as string;
+
+  const result = await AuthService.verifyEmail(token);
+
+  res.status(200).json({
+    success: true,
+    message: "Email verified successfully",
+    data: result,
+  });
 });
 
 const changePassword = catchAsync(async (req: Request, res: Response) => {
@@ -32,6 +44,7 @@ const forgotPassword = catchAsync(async (req: Request, res: Response) => {
 export const AuthController = {
   login,
   register,
+  verifyEmail,
   changePassword,
   forgotPassword,
 };

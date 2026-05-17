@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 import { AuthController } from "./auth.controller";
 import validateRequest from "../../middleware/validateSchema";
-import { EmailSchema } from "./auth.validation";
+import { loginValidationSchema, userValidationSchema } from "./auth.validation";
 
 const router:Router = Router();
 
@@ -15,9 +15,10 @@ const router:Router = Router();
 //     })
 // })
 
-router.get("/login", AuthController.login);
-router.get("/register",AuthController.register);
-router.get("/change-password", validateRequest(EmailSchema),AuthController.changePassword);
-router.get("/forgot-password", AuthController.forgotPassword);
+router.post("/login", validateRequest(loginValidationSchema) ,AuthController.login);
+router.post("/register",validateRequest(userValidationSchema), AuthController.register);
+router.get("/verify-email/:token", AuthController.verifyEmail);
+router.post("/change-password", AuthController.changePassword);
+router.post("/forgot-password", AuthController.forgotPassword);
 
 export const AuthRoutes = router;
