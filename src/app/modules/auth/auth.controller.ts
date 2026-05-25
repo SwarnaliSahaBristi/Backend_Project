@@ -23,8 +23,8 @@ const verifyEmail = catchAsync(async (req, res) => {
     success: true,
     message: "Email verified successfully",
     data: result,
-  });
-});
+  })
+})
 
 const changePassword = catchAsync(async (req: Request, res: Response) => {
   const result = await AuthService.changePassword("swarnali@gmail.com");
