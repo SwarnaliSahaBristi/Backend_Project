@@ -9,8 +9,8 @@
 ### Login
 ![Login](./assets/login.png)
 
-PORT=5000
-NODE_ENV=development
+PORT=your_port
+NODE_ENV=your_node_env
 
 DATABASE_URL=your_database_uri
 
