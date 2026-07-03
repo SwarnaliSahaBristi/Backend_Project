@@ -17,7 +17,7 @@ DATABASE_URL=your_database_uri
 EMAIL_USER=your_email
 EMAIL_PASS=your_app_password 
 
-MONGO_URI=your_mongo_uri 
+MONGO_URI=your_mongo_uri  
  
 What is the difference between Primary Key and Foreign Key?
 Ans: A Primary Key is a column or a combination of columns used to uniquely identify every single record in a database table. It must contain completely unique values and can never accept NULL values, with a strict rule of only one primary key per table. On the other hand, a Foreign Key is used to link two tables together by referencing the primary key of another table. Unlike primary keys, foreign keys can accept duplicate and NULL values, and a single table can contain multiple foreign keys to establish relationships with various tables, thereby maintaining referential integrity across the database. 
