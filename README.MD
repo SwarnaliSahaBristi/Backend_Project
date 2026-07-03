@@ -7,7 +7,7 @@
 ![Verify](./assets/verify-email.png)
 
 ### Login
-![Login](./assets/login.png)
+![Login](./assets/login.png) 
 
 PORT=your_port
 NODE_ENV=your_node_env
