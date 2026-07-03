@@ -12,7 +12,7 @@
 PORT=your_port
 NODE_ENV=your_node_env
 
-DATABASE_URL=your_database_uri
+DATABASE_URL=your_database_uri 
 
 EMAIL_USER=your_email
 EMAIL_PASS=your_app_password
