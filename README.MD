@@ -16,7 +16,7 @@ DATABASE_URL=your_database_uri
 
 EMAIL_USER=your_email 
 EMAIL_PASS=your_app_password 
-
+ 
 MONGO_URI=your_mongo_uri  
  
 What is the difference between Primary Key and Foreign Key? 
