@@ -14,7 +14,7 @@ NODE_ENV=your_node_env
 
 DATABASE_URL=your_database_uri 
 
-EMAIL_USER=your_email
+EMAIL_USER=your_email 
 EMAIL_PASS=your_app_password 
 
 MONGO_URI=your_mongo_uri  
