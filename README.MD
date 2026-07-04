@@ -24,7 +24,7 @@ Ans: A Primary Key is a column or a combination of columns used to uniquely iden
 
 Why is normalization important?
 Ans: Normalization is a systematic database design technique used to organize data into multiple tables to minimize redundancy and eliminate undesirable characteristics like insertion, update, and deletion anomalies. By breaking down large, monolithic tables into smaller, isolated ones and defining clear relationships between them, normalization ensures that every piece of data is stored in exactly one place. This prevents data inconsistency—such as updating a user's phone number in one place but having it remain outdated in another—and significantly reduces the storage footprint of the database.
-
+ 
 What is a JOIN?
 Ans: A JOIN clause in SQL is a mechanism used to combine and retrieve rows from two or more tables simultaneously, based on a related, shared column between them. When querying a normalized database where information is split across multiple tables, joins allow you to stitch that data back together into a single result set. The most common types are Inner Joins, which return only the rows that have matching values in both tables, and Left Joins, which return all records from the primary left table along with any matching records from the right table, filling in NULL values if no match exists.
 
