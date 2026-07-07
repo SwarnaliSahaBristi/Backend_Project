@@ -10,7 +10,7 @@
 ![Login](./assets/login.png) 
 
 PORT=your_port
-NODE_ENV=your_node_env  
+NODE_ENV=your_node_env   
 
 DATABASE_URL=your_database_uri 
 
