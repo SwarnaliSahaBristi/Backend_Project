@@ -1,7 +1,7 @@
 ## Screenshots 
 
 ### Register
-![Register](./assets/register.png) 
+![Register](./assets/register.png)
 
 ### Email Verify
 ![Verify](./assets/verify-email.png)
