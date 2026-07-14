@@ -4,7 +4,7 @@
 ![Register](./assets/register.png) 
 
 ### Email Verify
-![Verify](./assets/verify-email.png) 
+![Verify](./assets/verify-email.png)
 
 ### Login
 ![Login](./assets/login.png) 
